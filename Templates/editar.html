@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Película</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; }
+        .form-container { max-width: 500px; margin: 50px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #343a40; margin-top: 0; }
+        .current-info { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .current-info p { margin: 5px 0; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"] {
+            width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px; background-color: #ffc107; color: #343a40; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
+        }
+        button:hover { background-color: #e0a800; }
+        .back-link { display: block; margin-top: 20px; color: #6c757d; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>✏ Editar Película #{{ indice + 1 }}</h1>
+        <p>Introduce un nuevo título para buscar y actualizar todos los datos de esta película usando OMDb.</p>
+
+        <div class="current-info">
+            <p><strong>Título Actual:</strong> {{ pelicula['titulo'] }}</p>
+            <p><strong>Año:</strong> {{ pelicula['anio'] }}</p>
+        </div>
+
+        <form method="POST" action="{{ url_for('editar', indice=indice) }}">
+            <label for="titulo">Nuevo Título de Búsqueda:</label>
+            <input type="text" id="titulo" name="titulo" value="{{ pelicula['titulo'] }}" required>
+            
+            <button type="submit">Actualizar Datos</button>
+        </form>
+        
+        <a href="{{ url_for('index') }}" class="back-link">← Volver a la Colección</a>
+    </div>
+</body>
+</html>

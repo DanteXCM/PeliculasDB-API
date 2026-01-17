@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Colección de Películas</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #343a40; border-bottom: 3px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
+        .add-link {
+            display: inline-block; padding: 10px 15px; background-color: #28a745; color: white;
+            text-decoration: none; border-radius: 5px; margin-bottom: 20px; font-weight: bold;
+        }
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .movie-card {
+            background-color: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s;
+        }
+        .movie-card:hover { transform: translateY(-5px); }
+        .movie-poster { width: 100%; height: 400px; object-fit: cover; }
+        .movie-info { padding: 15px; }
+        .movie-info h2 { font-size: 1.5em; margin-top: 0; color: #007bff; }
+        .movie-info p { margin: 5px 0; color: #555; }
+        .movie-info .actors { font-size: 0.9em; font-style: italic; }
+        .movie-actions a { margin-right: 10px; text-decoration: none; color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎞 Mi Colección de Películas</h1>
+        <a href="{{ url_for('agregar') }}" class="add-link">➕ Agregar Película</a>
+
+        {% if peliculas %}
+            <div class="movie-grid">
+                {% for pelicula in peliculas %}
+                <div class="movie-card">
+                    {% set poster_url = pelicula['poster'] if pelicula['poster'] and pelicula['poster'] != 'N/A' else 'https://placehold.co/300x400/2c3e50/ffffff?text=Sin+Póster' %}
+                    <img src="{{ poster_url }}" alt="Póster de {{ pelicula['titulo'] }}" class="movie-poster">
+                    
+                    <div class="movie-info">
+                        <h2>{{ loop.index }}. {{ pelicula['titulo'] }} ({{ pelicula['anio'] }})</h2>
+                        <p>{{ pelicula['sinopsis'] }}</p>
+                        <p class="actors">Actores: {{ pelicula['actores'] }}</p>
+                        <div class="movie-actions">
+                            <a href="{{ url_for('editar', indice=loop.index0) }}">Editar</a>
+                            <a href="{{ url_for('eliminar', indice=loop.index0) }}" onclick="return confirm('¿Estás seguro de eliminar {{ pelicula['titulo'] }}?')">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aún no tienes películas en tu colección. ¡Agrega una ahora!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

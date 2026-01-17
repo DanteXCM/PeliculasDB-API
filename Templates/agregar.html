@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Película</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; }
+        .form-container { max-width: 500px; margin: 50px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #343a40; margin-top: 0; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"] {
+            width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
+        }
+        button:hover { background-color: #0056b3; }
+        .back-link { display: block; margin-top: 20px; color: #6c757d; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>🔍 Buscar y Agregar Película</h1>
+        <p>Introduce el título exacto de la película que deseas agregar. Se buscarán los datos en OMDb API.</p>
+
+        <form method="POST" action="{{ url_for('agregar') }}">
+            <label for="nombre">Título de la Película:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <button type="submit">Buscar y Agregar</button>
+        </form>
+        
+        <a href="{{ url_for('index') }}" class="back-link">← Volver a la Colección</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+    {
+        "titulo": "Scott Pilgrim vs. the World",
+        "anio": "2010",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTA5ZWMwNmYtNWI1ZS00NDRlLTkxNzktMzdhZDU2ZDhjNDJmXkEyXkFqcGc@._V1_SX300.jpg",
+        "actores": "Michael Cera, Mary Elizabeth Winstead, Kieran Culkin",
+        "sinopsis": "A young man must defeat his new girlfriend's seven evil exes, who are willing to do anything to prevent her happiness with someone else."
+    },
+    {
+        "titulo": "The Wild Robot",
+        "anio": "2024",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZWNiZjVlZTUtNGUwYi00MjJmLTg2MDctNWEzYTJiMzY1ODc4XkEyXkFqcGc@._V1_SX300.jpg",
+        "actores": "Lupita Nyong'o, Pedro Pascal, Kit Connor",
+        "sinopsis": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose."
+    },
+    {
+        "titulo": "Robot Dreams",
+        "anio": "2023",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjVhYWRkZjAtNTA1Mi00NDVkLWI2NjAtNzQxOTJlMWRjMDQ1XkEyXkFqcGc@._V1_SX300.jpg",
+        "actores": "Ivan Labanda, Robin Krambroeckers, Metodi Dimitrov",
+        "sinopsis": "The adventures and misfortunes of Dog and Robot in New York City during the 1980s."
+    },
+    {
+        "titulo": "Soy Frankelda",
+        "anio": "2025",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOGI4OTEyZWEtMGIyNy00MzYxLTg2ZjktNzRjZjBlYTc2MTdmXkEyXkFqcGc@._V1_SX300.jpg",
+        "actores": "N/A",
+        "sinopsis": "Frankelda, a determined 19th-century Mexican writer, journeys into her subconscious to face the monsters she's written about. Guided by a tormented prince, she must restore the balance between fiction and reality before it's too l..."
+    },
+    {
+        "titulo": "Harry Potter and the Deathly Hallows: Part 2",
+        "anio": "2011",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTA1Mzc2N2ItZWRiNS00MjQzLTlmZDQtMjU0NmY1YWRkMGQ4XkEyXkFqcGc@._V1_SX300.jpg",
+        "actores": "Daniel Radcliffe, Emma Watson, Rupert Grint",
+        "sinopsis": "Harry, Ron and Hermione set out on a quest to eliminate the remaining horcruxes. On the other hand, the students and teachers must unite to defend Hogwarts against Lord Voldemort and his army."
+    }
+]
